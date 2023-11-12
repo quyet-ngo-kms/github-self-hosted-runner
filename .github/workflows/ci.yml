@@ -36,4 +36,4 @@ jobs:
           yarn -v
           node -v
           npm -v
-          git -v
+          git --version
