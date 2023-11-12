@@ -39,3 +39,4 @@ jobs:
           npm -v
           git --version
           turbo --version
+          docker -v
