@@ -36,5 +36,4 @@ jobs:
           yarn -v
           node -v
           npm -v
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git -v
