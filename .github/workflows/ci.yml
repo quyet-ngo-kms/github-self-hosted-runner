@@ -11,7 +11,5 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
-          az -v
-          echo "${{ secrets.DB_PASS }}
-          echo "${{ vars.DB_USER }}
-
+          echo "DB_USER=${{ vars.DB_USER }}"
+          echo "DB_PASS=${{ secrets.DB_PASS }}"
