@@ -9,7 +9,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Run Test thoi
         run: |
           echo "DB_USER=${{ vars.DB_USER }}"
           echo "DB_PASS=${{ secrets.DB_PASS }}"
+  DeployToDev:
+    name: Deploy to Dev
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: "https://dev.qngo.com"
+    steps:
+      - name: Deploying Dev
+        run: |
+          echo "DB_USER=${{ vars.DB_USER }}"
+          echo "DB_PASS=${{ secrets.DB_PASS }}"
+  DeployToProd:
+    name: Deploy to Prod
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+      url: "https://www.qngo.com"
+    steps:
+      - name: Deploying Prod
+        run: |
+          echo "DB_USER=${{ vars.DB_USER }}"
+          echo "DB_PASS=${{ secrets.DB_PASS }}"
+
+
