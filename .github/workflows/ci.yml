@@ -18,23 +18,26 @@ jobs:
     name: Deploy to Dev
     runs-on: ubuntu-latest
     environment:
-      name: development
+      name: dev
       url: "https://dev.qngo.com"
     steps:
       - name: Deploying Dev
         run: |
           echo "DB_USER=${{ vars.DB_USER }}"
           echo "DB_PASS=${{ secrets.DB_PASS }}"
+          echo "url=${{ env.url }}"
   DeployToProd:
     name: Deploy to Prod
     runs-on: ubuntu-latest
     environment:
-      name: production
+      name: prod
       url: "https://www.qngo.com"
     steps:
       - name: Deploying Prod
         run: |
           echo "DB_USER=${{ vars.DB_USER }}"
           echo "DB_PASS=${{ secrets.DB_PASS }}"
+          echo "url=${{ env.url }}"
+
 
 
