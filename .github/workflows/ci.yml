@@ -18,7 +18,7 @@ jobs:
     name: Deploy to Dev
     runs-on: ubuntu-latest
     environment:
-      name: dev
+      name: development
       url: "https://dev.qngo.com"
     steps:
       - name: Deploying Dev
@@ -29,7 +29,7 @@ jobs:
     name: Deploy to Prod
     runs-on: ubuntu-latest
     environment:
-      name: prod
+      name: production
       url: "https://www.qngo.com"
     steps:
       - name: Deploying Prod
