@@ -12,4 +12,10 @@ jobs:
       - name: Run Test thoi
         run: |
           echo "DB_USER=${{ vars.DB_USER }}"
-          echo "DB_PASS=${{ secrets.DB_PASS }}"
+      - name: Extra secrets.DB_PASS
+        run: |
+          echo "DB_USER=${{ vars.DB_USER }}"
+          echo "$DB_PASS_env"
+        shell: bash
+        env:
+          DB_PASS_env: ${{secrets.DB_PASS}}
